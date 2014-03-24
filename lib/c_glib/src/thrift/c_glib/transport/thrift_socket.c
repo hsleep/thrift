@@ -56,7 +56,6 @@ thrift_socket_open (ThriftTransport *transport, GError **error)
 {
   struct hostent he, *hp = NULL;
   struct sockaddr_in pin;
-  struct linger ling = {1, 0};
   int err;
   char buf[1024];
 
@@ -86,14 +85,6 @@ thrift_socket_open (ThriftTransport *transport, GError **error)
                  "failed to create socket for host %s:%d - %s",
                  tsocket->hostname, tsocket->port,
                  strerror(errno));
-    return FALSE;
-  }
-
-  if (setsockopt(tsocket->sd, SOL_SOCKET, SO_LINGER, &ling,
-                 sizeof(ling)) == -1)
-  {
-    g_set_error (error, THRIFT_TRANSPORT_ERROR, THRIFT_TRANSPORT_ERROR_SOCKOPT,
-                 "unable to set SO_LINGER - %s", strerror(errno));
     return FALSE;
   }
 
