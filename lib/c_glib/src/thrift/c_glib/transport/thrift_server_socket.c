@@ -137,7 +137,7 @@ thrift_server_socket_close (ThriftServerTransport *transport, GError **error)
                  "unable to close socket - %s", strerror(errno));
     return FALSE;
   }
-  tsocket->sd = 0;
+  tsocket->sd = -1;
 
   return TRUE;
 }
@@ -153,7 +153,7 @@ thrift_server_socket_error_quark (void)
 static void
 thrift_server_socket_init (ThriftServerSocket *socket)
 {
-  socket->sd = 0;
+  socket->sd = -1;
 }
 
 /* destructor */
@@ -162,11 +162,11 @@ thrift_server_socket_finalize (GObject *object)
 {
   ThriftServerSocket *socket = THRIFT_SERVER_SOCKET (object);
 
-  if (socket->sd != 0)
+  if (socket->sd >= 0)
   {
     close (socket->sd);
   }
-  socket->sd = 0;
+  socket->sd = -1;
 }
 
 /* property accessor */
