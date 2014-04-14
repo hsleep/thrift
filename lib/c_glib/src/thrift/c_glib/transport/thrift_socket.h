@@ -31,8 +31,6 @@ G_BEGIN_DECLS
  *         ThriftTransport class.
  */
 
-#define THRIFT_INVALID_SOCKET (-1)
-
 /* type macros */
 #define THRIFT_TYPE_SOCKET (thrift_socket_get_type ())
 #define THRIFT_SOCKET(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), THRIFT_TYPE_SOCKET, ThriftSocket))
