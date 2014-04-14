@@ -94,7 +94,7 @@ cpp_transports="buffered framed http"
 java_server_transports="buffered framed fastframed"
 java_client_transports=${java_server_transports}" http"
 # we need a test certificate first
-cpp_sockets="ip domain"
+cpp_sockets="ip domain ip-ssl"
 java_sockets="ip ip-ssl"
 # TODO fastframed java transport is another implementation of framed transport
 
@@ -171,7 +171,7 @@ for proto in $(intersection "${cpp_protocols}" "${java_protocols}"); do
 done
 
 
-NODE_TEST_DIR=${BASEDIR}/../bin/nodejs/tests
+NODE_TEST_DIR=${BASEDIR}/../../lib/nodejs/test
 export NODE_PATH=${NODE_TEST_DIR}:${NODE_TEST_DIR}/../lib:${NODE_PATH}
 ######### nodejs client - cpp server ##############
 ##
