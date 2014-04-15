@@ -31,8 +31,6 @@ G_BEGIN_DECLS
  *         ThriftServerTransport class.
  */
 
-#define THRIFT_INVALID_SOCKET (-1)
-
 /* type macros */
 #define THRIFT_TYPE_SERVER_SOCKET (thrift_server_socket_get_type ())
 #define THRIFT_SERVER_SOCKET(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), THRIFT_TYPE_SERVER_SOCKET, ThriftServerSocket))

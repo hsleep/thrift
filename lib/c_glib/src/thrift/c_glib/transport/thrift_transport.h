@@ -147,6 +147,8 @@ typedef enum
 GQuark thrift_transport_error_quark (void);
 #define THRIFT_TRANSPORT_ERROR (thrift_transport_error_quark ())
 
+#define THRIFT_INVALID_SOCKET (-1)
+
 G_END_DECLS
 
 #endif /* _THRIFT_TRANSPORT_H */

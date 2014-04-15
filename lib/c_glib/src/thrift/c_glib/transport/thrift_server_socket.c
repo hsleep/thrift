@@ -31,8 +31,6 @@
 #include <thrift/c_glib/transport/thrift_server_transport.h>
 #include <thrift/c_glib/transport/thrift_server_socket.h>
 
-#define THRIFT_INVALID_SOCKET (-1)
-
 /* object properties */
 enum _ThriftServerSocketProperties
 {
