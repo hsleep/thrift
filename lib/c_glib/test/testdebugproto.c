@@ -75,8 +75,6 @@ test_debug_proto(void)
   g_hash_table_insert (hm->bonks, nothing, bonks);
 
   g_object_unref (hm);
-
-  return 0;
 }
 
 int
