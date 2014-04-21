@@ -29,8 +29,6 @@
 #include <thrift/c_glib/transport/thrift_transport.h>
 #include <thrift/c_glib/transport/thrift_socket.h>
 
-#include <stdio.h>
-
 /* object properties */
 enum _ThriftSocketProperties
 {
