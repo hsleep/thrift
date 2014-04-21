@@ -2644,9 +2644,6 @@ void t_c_glib_generator::generate_deserialize_struct(ofstream &out,
   indent_up();
   if (allocate) {
     indent(out) << "g_object_unref (" << prefix << ");" << endl;
-    if (tstruct->is_xception()) {
-      indent(out) << prefix << " = NULL;" << endl;
-    }
   }
   out <<
     indent() << "return " << error_ret << ";" << endl;
