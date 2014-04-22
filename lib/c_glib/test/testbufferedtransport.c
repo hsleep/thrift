@@ -249,7 +249,7 @@ test_write_fail(void)
     assert (thrift_buffered_transport_is_open (transport));
 
     /* recognize disconnection */
-	sleep(1);
+    sleep(1);
     assert (thrift_buffered_transport_write (transport, buf, 10, NULL) == TRUE);
     assert (thrift_buffered_transport_write (transport, buf, 10, NULL) == FALSE);
 
